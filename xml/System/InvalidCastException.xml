@@ -47,9 +47,9 @@
 ## Remarks  
  .NET Framework には、インターフェイス オブジェクトと、バックアップを作成するインターフェイスを提供する型およびその基本型および派生の型への派生型からの自動変換がサポートしています。 さまざまなカスタム変換をサポートするメカニズムも含まれています。 詳細については、次を参照してください。 [.NET Framework における型変換](~/docs/standard/base-types/type-conversion.md)します。  
   
- <xref:System.InvalidCastException> 1 つの型のインスタンスの別の型への変換がサポートされていない場合、例外がスローされます。 変換しようとしてなど、<xref:System.Char>値を<xref:System.DateTime>値がスローされます、<xref:System.InvalidCastException>例外。 異なり、 <xref:System.OverflowException> 1 つの型の間の変換がサポートされていますが、ソースの種類の値が対象の型の範囲外の場合にスローされる例外。  <xref:System.InvalidCastException>例外は、開発者のエラーによって発生およびで処理できない、`try/catch`ブロックは、代わりに、例外の原因を解消する必要があります。  
+ <xref:System.InvalidCastException> 1 つの型のインスタンスの別の型への変換がサポートされていない場合、例外がスローされます。 例えば<xref:System.Char>値を<xref:System.DateTime>値にキャストしようとしたときに<xref:System.InvalidCastException>がスローされます。 <xref:System.OverflowException>は、キャストは正当なものですが、キャスト前の値がキャスト後の値の範囲外の場合にスローされる例外です。  <xref:System.InvalidCastException>例外は、開発者のエラーによって発生およびで処理できない、`try/catch`ブロックは、代わりに、例外の原因を解消する必要があります。  
   
- システムでサポートされている変換については、次を参照してください。、<xref:System.Convert>クラス。 ソースの種類は、値が、大きさがない変換先の型を格納できる場合に発生するエラーの特定のソースの値を格納するのに十分な参照してください、<xref:System.OverflowException>例外。  
+ システムでサポートされている変換については、<xref:System.Convert>クラスを参照してください。 ソースの種類は、値が、大きさがない変換先の型を格納できる場合に発生するエラーの特定のソースの値を格納するのに十分な参照してください、<xref:System.OverflowException>例外。  
   
 > [!NOTE]
 >  多くの場合、言語コンパイラは、変換はありませんが、ソースの種類とターゲット型の間に存在して、コンパイラ エラーを検出します。  
@@ -91,7 +91,7 @@
 ## <a name="the-convertchangetype-method"></a>Convert.ChangeType メソッド  
  呼び出して、<xref:System.Convert.ChangeType%2A?displayProperty=nameWithType>からは、別の 1 つの型が 1 つまたは両方の種類のオブジェクトを変換するメソッドを実装しない、<xref:System.IConvertible>インターフェイス。  
   
- ほとんどの場合、変換がサポートされていないためある回避策はありません。 場合によっては、考えられる回避策はのようなプロパティに、ソースの種類からプロパティ値を手動で割り当てるには、対象の型。  
+ ほとんどの場合、変換がサポートされていないため回避策はありません。 場合によっては、考えられる回避策はのようなプロパティに、ソースの種類からプロパティ値を手動で割り当てるには、対象の型。  
   
 <a name="Narrowing"></a>   
 ## <a name="narrowing-conversions-and-iconvertible-implementations"></a>縮小変換と IConvertible の実装  
@@ -99,7 +99,7 @@
   
  ただし、明示的または縮小、2 つの型の間の変換に、ソースの種類も対象の型が定義されている場合、および<xref:System.IConvertible>1 つまたは両方の種類の実装は、ソースの種類から、がターゲット型への変換をサポートしない<xref:System.InvalidCastException>例外がスローされます。  
   
- ほとんどの場合、変換がサポートされていないためある回避策はありません。  
+ ほとんどの場合、変換がサポートされていないため回避策はありません。  
   
 <a name="Downcasting"></a>   
 ## <a name="downcasting"></a>ダウン キャスト  
